@@ -199,10 +199,11 @@
 				autocapitalize: "off"
 			},
 			showCancelButton: true,
-			confirmButtonText: "Look up",
+			confirmButtonText: "Submit",
 			showLoaderOnConfirm: true,
 			preConfirm: (username)=>{
 				setCookieWithMaxAge('username', username, 1);
+				window.location.reload()
 			}
 			})
 		}else{
