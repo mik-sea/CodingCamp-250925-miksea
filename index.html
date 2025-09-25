@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>SukaSuka Studio</title>
+	<link rel="stylesheet" href="./css/index.css">
 	<!-- use tailwind css -->
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <!-- navbar header for image logo and menus -->
-    <div class="navbar w-full">
+    <div class="navbar w-full sticky top-0">
 		<nav class="bg-white shadow-md">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="flex justify-between h-16">
@@ -17,19 +19,19 @@
 				<!-- Logo -->
 				<div class="flex-shrink-0 flex items-center">
 					<a href="#" class="flex items-center">
-						<img src="./images/logo_revou.png" 
-							alt="Logo" 
-							class="w-10 h-10 rounded-full">
+						<img src="./images/sukasukastudio.png" 
+							alt="Logo sukasukastudio" 
+							class="w-12 h-12 rounded-full">
 					</a>
 
 				</div>
 
 				<!-- Menu desktop -->
 				<div class="hidden md:flex md:items-center md:space-x-8">
-					<a href="#" class="text-slate-700 hover:text-blue-700">Home</a>
-					<a href="#" class="text-slate-700 hover:text-blue-700">Our Profile</a>
-					<a href="#" class="text-slate-700 hover:text-blue-700">Portofolio</a>
-					<a href="#" class="text-slate-700 hover:text-blue-700">Message Us</a>
+					<a href="#home" class="text-slate-700 hover:text-blue-700">Home</a>
+					<a href="#profile" class="text-slate-700 hover:text-blue-700">Our Profile</a>
+					<a href="#visi" class="text-slate-700 hover:text-blue-700">Visi & Misi</a>
+					<a href="#message" class="text-slate-700 hover:text-blue-700">Message Us</a>
 				</div>
 
 				<!-- Button mobile -->
@@ -47,84 +49,96 @@
 
 			<!-- Menu mobile (hidden default) -->
 			<div id="menu" class="hidden md:hidden px-4 pb-4">
-				<a href="#" class="block py-2 text-slate-700 hover:text-blue-700">Home</a>
-				<a href="#" class="block py-2 text-slate-700 hover:text-blue-700">Our Profile</a>
-				<a href="#" class="block py-2 text-slate-700 hover:text-blue-700">Portofolio</a>
-				<a href="#" class="block py-2 text-slate-700 hover:text-blue-700">Message Us</a>
+				<a href="#home" class="block py-2 text-slate-700 hover:text-blue-700">Home</a>
+				<a href="#profile" class="block py-2 text-slate-700 hover:text-blue-700">Our Profile</a>
+				<a href="#visi" class="block py-2 text-slate-700 hover:text-blue-700">Visi & Misi</a>
+				<a href="#message" class="block py-2 text-slate-700 hover:text-blue-700">Message Us</a>
 			</div>
 			</nav>
 	</div>
     <!-- section for opening text and images maybe slider? -->
-    <div class="page1">
-		<div class="container mx-auto px-6 py-10">
+    <div class="home">
+		<div class="container mx-auto px-6 py-10 max-w-3xl text-center scroll-mt-20" id="home">
 			<!-- Heading -->
 			<h1 class="text-2xl font-bold text-slate-800">
-			Hi Harfi, Welcome To Website
+				<!-- get name from prompt js -->
+			Hi <span id="username"></span>, Welcome To SukaSuka Studio
 			</h1>
-			<p class="text-slate-600 mt-2">
-			Ini adalah website latihan pertama
+			<p class="text-gray-700 text-lg">
+				Selamat datang di <span class="font-bold text-blue-600">SukaSuka Studio</span> 🎮<br>
+				Rumah bagi kreator muda dan komunitas pecinta <span class="font-semibold">Roblox</span>!  
+				Kami bikin game yang <span class="text-green-600">seru, kreatif, nyeleneh</span>,  
+				dan pastinya bikin betah dimainkan bareng teman.
 			</p>
 
 			<!-- Placeholder box -->
 			<div class="flex justify-center items-center mt-20">
 			<div class="w-[700px] h-[400px] border border-gray-400 flex items-center justify-center">
-				<span class="text-gray-500">1386×578</span>
+				<img src="./images/sukasukastudio.png" alt="SukaSuka Studio Logo" class="max-w-full max-h-full object-contain">
 			</div>
+			</div>
+
 		</div>
   </div>
 	</div>
-    <!-- our headquarter -->
-    <div class="page2">
-		<div class="container mx-auto px-6 py-10">
+    <!-- our profile -->
+    <div class="profile bg-gradient-to-r from-blue-50 to-purple-50 py-16" id="profile">
+		<div class="container mx-auto px-6 py-10 max-w-3xl">
 			<!-- Title -->
-			<h2 class="text-xl font-bold text-slate-800 mb-8">
-			Our Headquarter
+			<h2 class="text-xl font-bold text-slate-800 mb-8 text-center">
+			Our Profile
 			</h2>
 
-			<!-- Circles -->
-			<div class="flex flex-col md:flex-row items-center justify-center gap-12">
-			
-			<!-- Jakarta -->
-			<div class="flex flex-col items-center">
-				<div class="w-28 h-28 rounded-full border border-gray-500"></div>
-				<p class="mt-2 text-slate-700">Jakarta</p>
-			</div>
-			
-			<!-- Bandung -->
-			<div class="flex flex-col items-center">
-				<div class="w-28 h-28 rounded-full border border-gray-500"></div>
-				<p class="mt-2 text-slate-700">Bandung</p>
-			</div>
-			
-			<!-- Surabaya -->
-			<div class="flex flex-col items-center">
-				<div class="w-28 h-28 rounded-full border border-gray-500"></div>
-				<p class="mt-2 text-slate-700">Surabaya</p>
-			</div>
+			<p class="text-gray-700 text-lg text-center">
+				Kami adalah studio game independen yang lahir dari semangat untuk berkarya, berkolaborasi, dan berbagi kesenangan melalui platform Roblox.
+				Dengan tim kreatif yang terdiri dari developer, desainer, dan storyteller, kami membangun game yang tidak hanya menyenangkan, tapi juga punya identitas unik.
+			</p>
+		</div>
+	</div>
+	<div class="visi scroll-mt-20" id="visi">
+		<div class="container mx-auto mt-10 px-6 py-10 max-w-3xl">
+			<!-- Title -->
+			<h2 class="text-xl font-bold text-slate-800 text-center">
+			Visi
+			</h2>
 
-			</div>
+			<p class="text-gray-700 text-lg text-center">
+				Menjadi studio Roblox yang menghadirkan game berkualitas, seru, dan menginspirasi komunitas global.
+			</p>
+
+			<h2 class="text-xl font-bold mt-6 text-slate-800 mb-8 text-center">
+			Misi
+			</h2>
+
+			<!-- <p class="text-gray-700 text-lg text-center"> -->
+				<ul class="list-decimal list-inside space-y-3 text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto text-center">
+					<li>Menghadirkan gameplay yang seru, imersif, dan kreatif.</li>
+					<li>Membangun komunitas lewat ruang kolaborasi terbuka.</li>
+					<li>Terus berinovasi mengikuti tren Roblox dan dunia gaming.</li>
+				</ul>
+			<!-- </p> -->
 		</div>
 	</div>
 	<!-- message us -->
-	<div class="message-us">
+	<div class="message bg-blue-100 py-16" id="message">
 		<div class="container mx-auto px-6 py-10 flex-1">
 			<!-- Title -->
 			<h2 class="text-xl font-bold text-slate-800 mb-6">Message Us</h2>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			<!-- Form -->
-			<form class="space-y-4 bg-gray-50 p-6 rounded-lg shadow-md">
+			<form id="messageForm" class="space-y-4 bg-gray-50 p-6 rounded-lg shadow-md">
 				<!-- Nama -->
 				<div>
 				<label class="block text-sm font-medium text-slate-700">Nama</label>
-				<input type="text" placeholder="Nama" 
+				<input type="text" placeholder="Nama" name="nama"
 						class="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
 				</div>
 
 				<!-- Tanggal Lahir -->
 				<div>
 				<label class="block text-sm font-medium text-slate-700">Tanggal Lahir</label>
-				<input type="date" 
+				<input type="date" name="tgllahir"
 						class="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
 				</div>
 
@@ -133,10 +147,10 @@
 				<label class="block text-sm font-medium text-slate-700">Jenis Kelamin</label>
 				<div class="mt-1 flex items-center gap-4">
 					<label class="flex items-center">
-					<input type="radio" name="gender" class="mr-2" /> Laki-Laki
+					<input type="radio" name="jenis" class="mr-2" /> Laki-Laki
 					</label>
 					<label class="flex items-center">
-					<input type="radio" name="gender" class="mr-2" /> Perempuan
+					<input type="radio" name="jenis" class="mr-2" /> Perempuan
 					</label>
 				</div>
 				</div>
@@ -144,26 +158,25 @@
 				<!-- Pesan -->
 				<div>
 				<label class="block text-sm font-medium text-slate-700">Pesan</label>
-				<textarea placeholder="Pesan" rows="4"
+				<textarea placeholder="Pesan" rows="4" name="pesan"
 					class="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
 				</div>
 
 				<!-- Submit -->
-				<button type="submit"
-						class="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition">
+				<button type="submit" class="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition">
 				Submit
 				</button>
 			</form>
 
 			<!-- Output box -->
-			<div class="border border-gray-300 rounded-lg p-6">
+			<div class="border border-gray-300 bg-gray-50 rounded-lg p-6">
 				<p class="text-sm text-slate-600 mb-2">
-				<span class="font-semibold">Current time :</span> Fri Jun 17 2022 11:27:28 GMT+0100
+				<span class="font-semibold">Current time :</span> <span id="currentTime"></span>
 				</p>
-				<p><span class="font-semibold">Nama :</span> Harfi Novian</p>
-				<p><span class="font-semibold">Tanggal Lahir :</span> 01/11/1996</p>
-				<p><span class="font-semibold">Jenis Kelamin :</span> Laki - Laki</p>
-				<p><span class="font-semibold">Pesan :</span> Lagi Belajar buat Website</p>
+				<p><span class="font-semibold">Nama :</span> <span id="nama"></span></p>
+				<p><span class="font-semibold">Tanggal Lahir :</span> <span id="tgllahir"></span></p>
+				<p><span class="font-semibold">Jenis Kelamin :</span> <span id="jenis"></span></p>
+				<p><span class="font-semibold">Pesan :</span> <span id="pesan"></span></p>
 			</div>
 			</div>
 		</div>
@@ -175,5 +188,96 @@
 		</div>
 	</footer>
 	<script src="./js/index.js"></script>
+	<script>
+		const username = getCookie("username")
+		const userTag = document.getElementById("username");
+		if(!username){
+			Swal.fire({
+			title:"Submit Your Name First",
+			input: "text",
+			inputAttributes: {
+				autocapitalize: "off"
+			},
+			showCancelButton: true,
+			confirmButtonText: "Look up",
+			showLoaderOnConfirm: true,
+			preConfirm: (username)=>{
+				setCookieWithMaxAge('username', username, 1);
+			}
+			})
+		}else{
+			userTag.innerText = username
+		}
+	</script>
+	<script>
+	document.querySelectorAll('a.nav-link').forEach(link => {
+		link.addEventListener('click', function(e) {
+		e.preventDefault();
+		const targetId = this.getAttribute('href').substring(1);
+		const targetElement = document.getElementById(targetId);
+		if (targetElement) {
+			targetElement.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+			});
+		}
+		});
+	});
+	</script>
+	<script>
+		function updateTime() {
+			const now = new Date();
+
+			// Nama hari & bulan
+			const days = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+			const months = [
+				"Januari","Februari","Maret","April","Mei","Juni",
+				"Juli","Agustus","September","Oktober","November","Desember"
+			];
+
+			const dayName = days[now.getDay()];
+			const date = now.getDate();
+			const monthName = months[now.getMonth()];
+			const year = now.getFullYear();
+
+			// Format jam
+			const hours = String(now.getHours()).padStart(2, "0");
+			const minutes = String(now.getMinutes()).padStart(2, "0");
+			const seconds = String(now.getSeconds()).padStart(2, "0");
+
+			// Gabungan
+			const timeString = `${dayName}, ${date} ${monthName} ${year} ${hours}:${minutes}:${seconds}`;
+
+			document.getElementById("currentTime").textContent = timeString;
+			}
+
+			// Update pertama kali
+			updateTime();
+
+			// Update tiap detik
+			setInterval(updateTime, 1000);
+
+
+	</script>
+	<script>
+		// const currentTime = document.getElementById("currentTime");
+		const nama = document.getElementById("nama");
+		const tgllahir = document.getElementById("tgllahir");
+		const jenis = document.getElementById("jenis");
+		const pesan = document.getElementById("pesan");
+		document.getElementById("messageForm").addEventListener("submit", async function(e) {
+		e.preventDefault(); // biar ga reload
+
+		const form = e.target;
+		const formData = new FormData(form);
+		console.log(...formData)
+		nama.textContent = formData.get("nama")
+		tgllahir.textContent = formData.get("tgllahir")
+		jenis.textContent = formData.get("jenis")
+		pesan.textContent = formData.get("pesan")
+		});
+
+	</script>
+
 </body>
 </html>
